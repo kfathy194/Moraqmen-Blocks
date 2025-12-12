@@ -1,0 +1,156 @@
+# GitHub Copilot Instructions for Moraqmen-Blocks
+
+## Project Overview
+This is a WordPress FSE Gutenberg blocks plugin with:
+- 5 custom blocks (Hero Banner, Feature Cards, Testimonials, CTA Button, Boilerplate)
+- Tailwind CSS with FSE theme.json integration
+- Functional React components (no TypeScript)
+- GitHub Copilot-optimized code structure
+
+## Development Patterns for Copilot
+
+### Block Component Structure
+Each block follows this pattern:
+```javascript
+// src/blocks/[block-name]/edit.js
+/**
+ * Edit component for [Block Name] block
+ * Displays the editor interface with controls and preview
+ */
+const Edit = ( props ) => {
+  const { attributes, setAttributes } = props;
+  // JSDoc comments help Copilot understand intent
+};
+export default Edit;
+```
+
+### Naming Conventions (Critical for Copilot)
+- Block folders: kebab-case (hero-banner, feature-cards)
+- Components: PascalCase (HeroBannerEdit, FeatureCardsEdit)
+- Functions: camelCase (parseThemeConfig, mergeClassNames)
+- Constants: UPPER_SNAKE_CASE (THEME_COLORS, DEFAULT_SPACING)
+- CSS classes: kebab-case (moraqmen-hero, moraqmen-card)
+
+### Copilot Prompt Examples
+
+**Creating New Block:**
+```
+Create a new block called [block-name] with the following structure:
+- Edit component with controls for [attributes]
+- Save component that renders [structure]
+- Tailwind CSS classes for styling
+- Register block in index.js
+```
+
+**Extending Block Functionality:**
+```
+Add [feature] to the [block-name] block by:
+1. Adding [attribute] to block.json
+2. Creating control in edit.js
+3. Using attribute in save.js output
+4. Styling with Tailwind classes
+```
+
+### File Organization for Copilot Context
+
+```
+src/blocks/[block-name]/
+├── block.json              # Block metadata
+├── index.js                # Registration
+├── edit.js                 # Editor component
+├── save.js                 # Frontend render
+└── style.css               # Block styles
+
+src/utils/
+├── themeConfig.js          # FSE theme parser
+├── classNameHelpers.js     # CSS class utilities
+└── constants.js            # Shared constants
+
+src/styles/
+├── tailwind.css            # Tailwind directives
+└── global.css              # Global styles
+```
+
+### JSDoc Patterns for Better Copilot Suggestions
+
+```javascript
+/**
+ * Parses FSE theme.json and extracts color palette
+ * @param {Object} themeJson - FSE theme configuration
+ * @returns {Object} Mapped color object for Tailwind
+ * @example
+ * const colors = parseThemeColors(themeJson);
+ * // { primary500: '#...' }
+ */
+const parseThemeColors = ( themeJson ) => {
+  // Implementation
+};
+```
+
+### Common Copilot Improvements
+
+1. **Attribute Handling:**
+   - Comment attribute purposes clearly
+   - Use descriptive names
+   - Include type hints in comments
+
+2. **Event Handlers:**
+   - Prefix with 'handle' (handleChange, handleClick)
+   - Include event type in comment
+   - Add what the handler does
+
+3. **Conditional Rendering:**
+   - Use ternary for simple conditions
+   - Extract complex logic to helper functions
+   - Comment the logic clearly
+
+4. **Styling:**
+   - Use Tailwind classes
+   - Reference FSE theme tokens
+   - Comment design system tokens
+
+### Questions to Ask Copilot
+
+```
+// Generate a responsive grid component
+// Create a block control for color selection from FSE palette
+// Add validation for block attributes
+// Optimize component rendering with memoization
+// Create utility function to merge Tailwind classes
+```
+
+## Key Files for Understanding
+
+- `plugin.php` - Main entry point
+- `package.json` - Dependencies and scripts
+- `tailwind.config.js` - Tailwind + FSE sync
+- `src/blocks/_boilerplate/` - Template for new blocks
+- `src/utils/` - Shared utility functions
+
+## Copilot-Friendly Coding Tips
+
+1. ✅ Use clear, descriptive function names
+2. ✅ Add JSDoc comments above functions
+3. ✅ Inline comments for complex logic
+4. ✅ Consistent code formatting
+5. ✅ Organized file structure
+6. ✅ Type hints in comments (no TypeScript)
+7. ✅ Example comments showing expected output
+8. ✅ Error handling with try-catch
+
+## When Stuck, Try These Prompts
+
+"Refactor this component to use React hooks"
+"Add error boundaries to this block"
+"Create responsive variants of this component"
+"Add accessibility attributes to this button"
+"Create a utility function that [specific task]"
+
+## Project-Specific Context
+
+- All colors inherit from FSE theme.json
+- All spacing uses FSE spacing scale
+- React components must be functional (no classes)
+- CSS must use Tailwind utility classes
+- No external styling libraries (Tailwind only)
+- All blocks use WordPress block metadata (block.json)
