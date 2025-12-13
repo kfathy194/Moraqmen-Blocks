@@ -1,0 +1,79 @@
+{
+  "$schema": "https://schemas.wp.org/trunk/block.json",
+  "apiVersion": 3,
+  "name": "moraqmen/testimonials",
+  "title": "Testimonials",
+  "category": "embed",
+  "description": "Display customer testimonials with avatar, quote, and author information",
+  "keywords": ["testimonial", "quote", "review", "customer", "feedback"],
+  "icon": "format-quote",
+  "attributes": {
+    "testimonials": {
+      "type": "array",
+      "default": []
+    },
+    "columns": {
+      "type": "number",
+      "default": 3
+    },
+    "layout": {
+      "type": "string",
+      "default": "grid",
+      "enum": ["grid", "carousel", "list"]
+    },
+    "gap": {
+      "type": "string",
+      "default": "md",
+      "enum": ["sm", "md", "lg"]
+    },
+    "enableAutoplay": {
+      "type": "boolean",
+      "default": false
+    },
+    "autoplaySpeed": {
+      "type": "number",
+      "default": 5000
+    },
+    "showRating": {
+      "type": "boolean",
+      "default": true
+    },
+    "backgroundColor": {
+      "type": "string",
+      "default": "#ffffff"
+    },
+    "textColor": {
+      "type": "string",
+      "default": "#000000"
+    },
+    "accentColor": {
+      "type": "string",
+      "default": "#f59e0b"
+    },
+    "borderRadius": {
+      "type": "string",
+      "default": "md",
+      "enum": ["none", "sm", "md", "lg"]
+    }
+  },
+  "supports": {
+    "html": false,
+    "color": {
+      "background": true,
+      "text": true,
+      "link": false
+    },
+    "spacing": {
+      "padding": true,
+      "margin": true
+    },
+    "typography": {
+      "fontSize": true,
+      "lineHeight": true
+    },
+    "align": ["wide", "full"]
+  },
+  "editorScript": "file:./index.js",
+  "editorStyle": "file:./style.scss",
+  "style": "file:./style.scss"
+}
