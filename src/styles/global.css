@@ -1,0 +1,95 @@
+/**
+ * Global Styles for Moraqmen Blocks
+ * 
+ * Defines base styles and resets that apply to all blocks.
+ * Utilizes FSE theme.json variables and Tailwind utilities.
+ */
+
+/* Reset and Base Styles */
+* {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  margin: 0;
+  padding: 0;
+  font-family: inherit;
+  line-height: 1.5;
+  color: inherit;
+}
+
+/* WordPress Block Styles */
+.wp-block-moraqmen {
+  margin: 0;
+  padding: 0;
+}
+
+/* Ensure blocks respect container width */
+.wp-block-moraqmen__container {
+  width: 100%;
+  max-width: 100%;
+}
+
+/* Image optimization */
+.wp-block-moraqmen img {
+  display: block;
+  height: auto;
+  max-width: 100%;
+}
+
+/* Link styles */
+.wp-block-moraqmen a {
+  transition: all 0.2s ease;
+}
+
+.wp-block-moraqmen a:focus-visible {
+  outline: 2px solid currentColor;
+  outline-offset: 2px;
+}
+
+/* Remove default button styling */
+button.wp-block-moraqmen,
+input[type='button'].wp-block-moraqmen {
+  font-family: inherit;
+  font-size: inherit;
+  line-height: inherit;
+  text-align: inherit;
+  cursor: pointer;
+  border: none;
+  background: transparent;
+  padding: 0;
+  margin: 0;
+}
+
+/* Responsive text */
+.wp-block-moraqmen h1,
+.wp-block-moraqmen h2,
+.wp-block-moraqmen h3,
+.wp-block-moraqmen h4,
+.wp-block-moraqmen h5,
+.wp-block-moraqmen h6 {
+  margin: 0;
+  line-height: 1.2;
+}
+
+/* Paragraph spacing */
+.wp-block-moraqmen p {
+  margin: 0 0 1em 0;
+}
+
+.wp-block-moraqmen p:last-child {
+  margin-bottom: 0;
+}
+
+/* List styles */
+.wp-block-moraqmen ul,
+.wp-block-moraqmen ol {
+  margin: 0 0 1em 0;
+  padding: 0 0 0 2em;
+}
+
+/* Editor-specific styles */
+.block-editor-block-list__layout .wp-block-moraqmen {
+  margin-bottom: 1rem;
+}
