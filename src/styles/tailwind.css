@@ -1,0 +1,76 @@
+/**
+ * Tailwind CSS Configuration File
+ * 
+ * Processes Tailwind utilities and imports FSE theme.json variables.
+ * This file is compiled to generate the Tailwind CSS output.
+ */
+
+/* Tailwind Directives */
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/**
+ * FSE Theme Integration
+ * 
+ * Colors and spacing values are inherited from theme.json
+ * and configured in tailwind.config.js
+ */
+
+/* Custom Component Classes for Moraqmen Blocks */
+@layer components {
+  /* Hero Banner Components */
+  .moraqmen-hero {
+    @apply w-full;
+  }
+
+  .moraqmen-hero-content {
+    @apply flex flex-col items-center justify-center gap-4;
+  }
+
+  /* Feature Cards Components */
+  .moraqmen-feature-cards {
+    @apply grid gap-6;
+  }
+
+  .moraqmen-card {
+    @apply rounded-lg p-6 transition-transform duration-300 hover:shadow-lg;
+  }
+
+  /* Testimonials Components */
+  .moraqmen-testimonials {
+    @apply max-w-4xl mx-auto;
+  }
+
+  .moraqmen-testimonial-item {
+    @apply p-6 rounded-lg bg-opacity-50 backdrop-blur;
+  }
+
+  /* CTA Button Components */
+  .moraqmen-cta {
+    @apply inline-flex items-center justify-center px-6 py-3 rounded-lg font-semibold transition-all duration-200;
+  }
+
+  .moraqmen-cta:hover {
+    @apply shadow-lg transform -translate-y-0.5;
+  }
+}
+
+/* Block Editor Styles */
+@layer utilities {
+  .wp-block-moraqmen-hero {
+    @apply w-full;
+  }
+
+  .wp-block-moraqmen-feature-cards {
+    @apply w-full;
+  }
+
+  .wp-block-moraqmen-testimonials {
+    @apply w-full;
+  }
+
+  .wp-block-moraqmen-cta-button {
+    @apply w-full;
+  }
+}
