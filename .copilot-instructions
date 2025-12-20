@@ -1,5 +1,4 @@
-# GitHub Copilot Instructions for Moraqmen-Blocks
-
+# GitHub Copilot Instructions for moraqmen-wp-blocks
 ## Project Overview
 This is a WordPress FSE Gutenberg blocks plugin with:
 - 5 custom blocks (Hero Banner, Feature Cards, Testimonials, CTA Button, Boilerplate)
@@ -154,3 +153,26 @@ const parseThemeColors = ( themeJson ) => {
 - CSS must use Tailwind utility classes
 - No external styling libraries (Tailwind only)
 - All blocks use WordPress block metadata (block.json)
+
+## VSCode Figma MCP Integration
+
+This project uses Figma Model Context Protocol (MCP) in VSCode for design system access and component management.
+
+### Setup Instructions:
+
+1. Install Figma MCP extension in VSCode
+2. Configure MCP settings in `.vscode/settings.json`:
+   ```json
+   "figma.token": "your-figma-token",
+   "figma.fileId": "8muuWcggxAJkbeqrl5mtsk"
+   ```
+3. Use Figma commands in VSCode Command Palette (Ctrl+Shift+P)
+4. Access design tokens and component variants directly from editor
+
+### Figma MCP Benefits:
+
+- Real-time design system reference
+- Component variants and tokens in editor
+- Automated theme.json generation from design tokens
+- Design-to-code workflow optimization
+- FSE theme compatibility checks
